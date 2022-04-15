@@ -23,7 +23,7 @@ module.exports = {
       },
       image: {
         allowNull: false,
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
       },
     });
   },
