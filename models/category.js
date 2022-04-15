@@ -4,6 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   },
   {
     timestamps: false,
+    tableName: 'Categories',
+    underscored: true,
   });
 
   return Category;

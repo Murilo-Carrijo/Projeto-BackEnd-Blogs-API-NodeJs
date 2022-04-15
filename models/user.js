@@ -3,12 +3,12 @@ module.exports = (sequelize, DataTypes) => {
     displayName: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    image: DataTypes.BLOB,
+    image: DataTypes.STRING,
   },
   {
     timestamps: false,
     tableName: 'Users',
-    uderscored: true,
+    underscored: true,
   });
 
   User.associate = (models) => {
