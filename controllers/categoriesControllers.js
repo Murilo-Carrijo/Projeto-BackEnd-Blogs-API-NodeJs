@@ -30,7 +30,7 @@ const getAll = async (req, res, _next) => {
         console.log(e);
         return res.status(401).json({ message: 'Expired or invalid token' });
       }
-      const categories = await Category.findAll();
+      const categories = await Category.findAll({ order: [['id', 'ASC']] });
       console.log(categories);
       return res.status(200).json(categories);
     } catch (e) {
