@@ -6,6 +6,7 @@ const categoriesValidate = require('../middleware/categoriesValidate');
 const router = express.Router();
 
 router
+  .get('/', categoriesController.getAll)
   .post('/',
     categoriesValidate.validationName,
     categoriesController.add);
