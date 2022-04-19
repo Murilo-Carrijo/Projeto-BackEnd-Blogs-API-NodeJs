@@ -7,6 +7,7 @@ const router = express.Router();
 
 router
   .get('/', userControllers.getAll)
+  .get('/:id', userControllers.getById)
   .post('/',
     validateUser.validationName,
     validateUser.validationEmail,
