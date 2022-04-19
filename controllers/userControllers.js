@@ -3,9 +3,6 @@ const { User } = require('../models');
 
 const add = async (req, res, _next) => {
   const { displayName, email, password, image } = req.body;
-  const token = req.headers.authorization;
-
-  console.log('informações do token: ', token);
 
   try {
     const checkemail = await User.findOne({ where: { email } });
