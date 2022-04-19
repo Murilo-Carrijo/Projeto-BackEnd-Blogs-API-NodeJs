@@ -5,10 +5,12 @@ const validateUser = require('../middleware/userValidate');
 
 const router = express.Router();
 
-router.post('/',
-  validateUser.validationName,
-  validateUser.validationEmail,
-  validateUser.validationPassword,
-  userControllers.add);
+router
+  .get('/', userControllers.getAll)
+  .post('/',
+    validateUser.validationName,
+    validateUser.validationEmail,
+    validateUser.validationPassword,
+    userControllers.add);
 
 module.exports = router;
