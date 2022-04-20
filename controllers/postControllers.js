@@ -38,7 +38,29 @@ const getAll = async (req, res, _next) => {
   }
 };
 
+const getById = async (req, res, _next) => {
+  const { id } = req.params;
+  const { authorization } = req.headers;
+  try {
+    try {
+      if (authorization.length === 0) return res.status(401).json({ message: 'Token not found' });
+      jwt.verify(authorization, 'superSecreto');
+    } catch (e) {
+      return res.status(401).json({ message: 'Expired or invalid token' });
+    }
+    const posts = await BlogPost.findOne({ where: { id }, 
+      include: [{ model: User, as: 'user', attributes: { exclude: ['password'] } },
+        { model: Category, as: 'categories' },
+      ] });
+      if (!posts) return res.status(404).json({ message: 'Post does not exist' });
+    return res.status(200).json(posts);
+  } catch (e) {
+    return res.status(500).json(e);
+  }
+};
+
 module.exports = {
   // add,
   getAll,
+  getById,
 };
