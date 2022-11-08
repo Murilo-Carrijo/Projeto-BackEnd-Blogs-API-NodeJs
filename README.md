@@ -39,12 +39,12 @@ As habilidade utilizadas nesse projeto foram:
 
 ## Como rodar o projeto localmente
 
-1. Clone o repositório
+**1. Clone o repositório**
   * `git@github.com:Murilo-Carrijo/Projeto-BackEnd-Blogs-API-NodeJs.git`
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd Projeto-BackEnd-Blogs-API-NodeJs`
 
-2. Instale as dependências e inicialize o projeto
+**2. Instale as dependências e inicialize o projeto**
   * Instale as dependências:
     * `npm install`
 
@@ -92,7 +92,7 @@ module.exports = {
 
 **Com elas que iremos conseguir conectar ao banco do avaliador automático**
 
-4. Teste os CRUDs utilizando ferramentas como o POSTMAN. 
+**4. Teste os CRUDs utilizando ferramentas como o POSTMAN.**
 
 ---
 
